@@ -10,10 +10,10 @@ export const countContacts = async () => {
     return contacts.length;
   } catch (error) {
     if (error.code === 'ENOENT') {
-      console.error('Файл не найден');
+      console.error('File not found');
       return 0;
     } else {
-      console.error('Ошибка чтения файла:', error);
+      console.error('File reading error:', error);
       throw error;
     }
   }
@@ -21,8 +21,8 @@ export const countContacts = async () => {
 
 countContacts()
   .then((count) => {
-    console.log('Количество контактов:', count);
+    console.log('Number of contacts:', count);
   })
   .catch((error) => {
-    console.error('Ошибка при подсчете контактов:', error);
+    console.error('Error counting contacts:', error);
   });
